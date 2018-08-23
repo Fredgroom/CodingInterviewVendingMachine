@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Fredgroom/CodingInterviewVendingMachine/issues"
   },
-  "homepage": "https://github.com/Fredgroom/CodingInterviewVendingMachine#readme"
+  "homepage": "https://github.com/Fredgroom/CodingInterviewVendingMachine#readme",
+  "devDependencies": {
+    "jest-cli": "^23.5.0"
+  }
 }
