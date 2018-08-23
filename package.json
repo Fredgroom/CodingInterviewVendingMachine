@@ -1,0 +1,20 @@
+{
+  "name": "CodingInterviewVendingMachine",
+  "version": "1.0.0",
+  "description": "A project to complete:",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fredgroom/CodingInterviewVendingMachine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fredgroom/CodingInterviewVendingMachine/issues"
+  },
+  "homepage": "https://github.com/Fredgroom/CodingInterviewVendingMachine#readme"
+}
