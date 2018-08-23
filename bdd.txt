@@ -1,0 +1,57 @@
+1. Have functionality for printing inventory
+    Title:
+        A vending machine owner wants to know the machines inventory.
+
+    Narrative:
+        As a vending machine owner I want the machine to print inventory so I know when to restock.
+
+    Scenario:
+        Given Interaction with the vending machine owner
+        When the vending machine owner wants the machine to print inventory
+        Then print the inventory of the machine
+
+2. Have functionality for refilling inventory
+    Title:
+        A vending machine owner wants to refill the machines inventory.
+
+    Narrative:
+        As a vending machine owner I want the machine to restock the machine so I can sell more items.
+
+    Scenario:
+        Given Interaction with the vending machine owner
+        When the vending machine owner wants the machine to refill the machine
+        Then refill the machine
+
+3. Have functionality for re-supplying change
+    Title:
+            A vending machine owner wants to refill the change
+
+        Narrative:
+            As a vending machine owner I want the machine to restock the machine so I can give correct change to customers so they reuse the machine
+
+        Scenario:
+            Given Interaction with the vending machine owner
+            When the vending machine owner wants to refill the change in the machine
+            Then refill the change in the machine
+
+4.  Have functionality for dispensing inventory based on payment
+    Title:
+            A vending machine owner wants the machine to dispense goods that have been paid for
+        Narrative:
+            As a vending machine owner I want the machine to dispense goods that have been paid for so I make money
+        Scenario:
+            Given Interaction with a customer
+            When a customer wants to buy something from the machine
+            and has paid the at least the correct amount of money
+            Then dispense the correct items
+
+5. Have functionality for returning change as coins (eg. 35p is 20p 10p and 5p)
+    Title:
+            A vending machine owner wants the machine to dispense correct change for goods that have been paid for
+        Narrative:
+            As a vending machine owner I want the machine to dispense correct change for goods that have been paid for.
+        Scenario:
+            Given Interaction with a customer
+            When a customer has bought something from the machine
+            and has paid more than the correct amount of money
+            Then dispense the correct change.
