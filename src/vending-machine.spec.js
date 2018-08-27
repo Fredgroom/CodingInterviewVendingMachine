@@ -1,10 +1,24 @@
-const VendingMachine = require('./vending-machine');
 
-describe('StudentStats', () => {
-    describe(('when there is not inventory'), () => {
-        it('should print none', () => {
-            expect(printInventory([0]).toEqual('time to refill')
-        );
+const VendingMachine = require('./vending-machine.js');
+const Inventory = require('./vending-machine.js');
+const Cash = require('./vending-machine.js');
+
+describe('VendingMachine', () => {
+    it('VendingMachine should be typeof Object', () => {
+
+        expect(VendingMachine === Object);
+    });
+    describe('Inventory', () => {
+        it('Inventory should be typeof Object', () => {
+          
+            expect(Inventory === Object);
         });
+
+    });
+    describe('Cash', () => {
+        it('Cash should be typeof Object', () => {
+
+            expect(Cash === Object);
+        }); 
     });
 });

@@ -1,26 +1,11 @@
+// const transactionFunctions = require('./Transaction-functions');
+
 class VendingMachine {
-    constructor() {
-    }
+    inventory() {
+        return undefined;
+    };
+ 
+};
 
-    printInventory() {
 
-    }
-
-    refillInventory() {
-
-    }
-
-    resupplyChange() {
-
-    }
-
-    dispenseInventory() {
-
-    }
-
-    returnChange() {
-
-    }
-}
-
-module.exports = VendingMachine; 
+module.exports = VendingMachine;
