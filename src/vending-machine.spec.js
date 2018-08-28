@@ -1,24 +1,18 @@
-
 const VendingMachine = require('./vending-machine.js');
-const Inventory = require('./vending-machine.js');
-const Cash = require('./vending-machine.js');
+const inventory = require('../_mock_/inventoryMock.js');
+const cash = require('../_mock_/cashMock.js');
+let testVendingMachine;
 
 describe('VendingMachine', () => {
-    it('VendingMachine should be typeof Object', () => {
-
-        expect(VendingMachine === Object);
+    beforeEach(() => {
+        testVendingMachine = new VendingMachine({ inventory, cash });
     });
-    describe('Inventory', () => {
-        it('Inventory should be typeof Object', () => {
-          
-            expect(Inventory === Object);
+    describe('getInventory()', () => {
+        it('should return inventory supplied', () => {
+            const result = testVendingMachine.getInventory();
+            expect(result).toEqual(inventory);
         });
-
     });
-    describe('Cash', () => {
-        it('Cash should be typeof Object', () => {
+    
 
-            expect(Cash === Object);
-        }); 
-    });
 });
