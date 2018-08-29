@@ -19,6 +19,20 @@ class VendingMachine {
             }
         });
     }
+    getCash() {
+        return this.cash;
+    }
+    resupplyCash(resuppliedCash) {
+        resuppliedCash.forEach((Coin) => {
+            console.log(key, quantity[key]);
+            const foundCoin = this.cash.find((currentCoin) => {
+                return currentCoin.key.quantity === Coin.quantity;
+            });
+            if (foundCoin) {
+                foundCoin.quantity += Coin.quantity;
+            }
+        });
+    };
 
 };
 

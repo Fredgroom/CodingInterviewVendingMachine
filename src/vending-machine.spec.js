@@ -41,7 +41,28 @@ describe('VendingMachine', () => {
                 expect(actualItemZeroQuantity).toEqual(expectedItemZeroQuantity);
             });
         });
-
+    });
+    describe('resupplyCash()', () => {
+        describe('getCash()', () => {
+            it('should return Cash supplied', () => {
+                const actualCash = testVendingMachine.getCash();
+                expect(actualCash).toEqual(mockCash);
+            });
+        });
+        describe('when resupplied cash exists', () => {
+            it('should update cash with new values', () => {
+                const resuppliedCash = {
+                    twoPounds: {
+                        quantity: 20
+                    }
+                };
+                console.log(resuppliedCash);
+                testVendingMachine.cash.twoPounds.quantity -= 10;
+                testVendingMachine.resupplyCash(resuppliedCash);
+                const actualCash = testVendingMachine.getCash();
+                expect(actualCash).toEqual(mockCash);
+            });
+        });
     });
 
 });
