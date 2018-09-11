@@ -52,9 +52,11 @@ class VendingMachine {
             return false;
         };
         if (total == foundProductObject.valueSterling) {
-            return foundProductObject.product += ' you paid in exact change';
+            return true;
         };
-
+        if (total > foundProductObject.valueSterling) {
+            return true;
+        };
     }
 
 };

@@ -96,12 +96,21 @@ describe('VendingMachine', () => {
                     });
                 });
                 describe('when product value is equal to coinsTendered', () => {
-                    it('should return product name', () => {
+                    it('should return true', () => {
                         const coinsTendered = [{
                             value: 80,
                         }];
                         const actualResult = testVendingMachine.dispenseProduct('mars', coinsTendered);
-                        expect(actualResult).toEqual('mars you paid in exact change');
+                        expect(actualResult).toEqual(true);
+                    });
+                });
+                describe('when product value is less than coinsTendered', () => {
+                    it('should return true', () => {
+                        const coinsTendered = [{
+                            value: 100,
+                        }];
+                        const actualResult = testVendingMachine.dispenseProduct('mars', coinsTendered);
+                        expect(actualResult).toEqual(true);
                     });
                 });
             });
