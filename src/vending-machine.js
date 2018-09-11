@@ -23,16 +23,39 @@ class VendingMachine {
         return this.cash;
     }
     resupplyCash(resuppliedCash) {
-        resuppliedCash.forEach((Coin) => {
-            console.log(key, quantity[key]);
+        resuppliedCash.forEach((coin) => {
             const foundCoin = this.cash.find((currentCoin) => {
-                return currentCoin.key.quantity === Coin.quantity;
+                return currentCoin.quantity === coin.quantity;
             });
             if (foundCoin) {
-                foundCoin.quantity += Coin.quantity;
+                foundCoin.quantity += coin.quantity;
             }
         });
     };
+    sumCoins(coins) {
+        let total = 0;
+        coins.forEach((coin) => total += coin.value);
+        return total;
+    }
+    dispenseProduct(productName, coinsTendered) {
+        const foundProductObject = this.inventory.find((currentProduct) => {
+            return currentProduct.product === productName;
+        });
+        const total = this.sumCoins(coinsTendered);
+        if (!foundProductObject) {
+            return false;
+        };
+        if (foundProductObject.quantity < 1) {
+            return false;
+        }; 
+        if (total < foundProductObject.valueSterling) {
+            return false;
+        };
+        if (total == foundProductObject.valueSterling) {
+            return foundProductObject.product += ' you paid in exact change';
+        };
+
+    }
 
 };
 

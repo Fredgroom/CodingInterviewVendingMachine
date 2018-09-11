@@ -1,34 +1,50 @@
-module.exports = {
-    twoPounds: {
+module.exports = [
+    {
+        coin: 'twoPounds',
         value: 200,
-        quantity: 20
+        quantity: 20,
+        maxquantity: 50
     },
-    onePound: {
+    {
+        coin: 'onePound',
         value: 100,
-        quantity: 50
+        quantity: 50,
+        maxquantity: 50
     },
-    fiftyP: {
+    {
+        coin: 'fiftyP',
         value: 50,
-        quantity: 50
+        quantity: 50,
+        maxquantity: 50
     },
-    twentyP: {
+    {
+        coin: 'twentyP',
         value: 20,
-        quantity: 100
+        quantity: 50,
+        maxquantity: 50
     },
-    tenP: {
+    {
+        coin: 'tenP',
         value: 10,
-        quantity: 100
+        quantity: 50,
+        maxquantity: 50
     },
-    fiveP: {
+    {
+        coin: 'fiveP',
         value: 5,
-        quantity: 100
-    }, 
-    twoP: {
-        value: 2,
-        quantity: 100
+        quantity: 50,
+        maxquantity: 50
     },
-    oneP: {
+    {
+        coin: 'twoP',
+        value: 2,
+        quantity: 50,
+        maxquantity: 50
+    },
+    {
+        coin: 'oneP',
         value: 1,
-        quantity: 100
+        quantity: 50,
+        maxquantity: 50
     }
-}
+]

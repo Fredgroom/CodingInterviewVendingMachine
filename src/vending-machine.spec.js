@@ -51,17 +51,62 @@ describe('VendingMachine', () => {
         });
         describe('when resupplied cash exists', () => {
             it('should update cash with new values', () => {
-                const resuppliedCash = {
-                    twoPounds: {
-                        quantity: 20
-                    }
-                };
-                console.log(resuppliedCash);
-                testVendingMachine.cash.twoPounds.quantity -= 10;
+                const resuppliedCash = [{
+                    coin: 'twoPounds',
+                    quantity: 10
+
+                }];
+                testVendingMachine.cash[0].quantity -= 10;
                 testVendingMachine.resupplyCash(resuppliedCash);
                 const actualCash = testVendingMachine.getCash();
                 expect(actualCash).toEqual(mockCash);
             });
+        });
+
+    });
+
+    describe('dispenseProduct()', () => {
+        describe('when product name does not exist', () => {
+            it('should return false', () => {
+                const coinsTendered = [{
+                    value: 70,
+                }];
+                const doesProductNameExist = testVendingMachine.dispenseProduct('doesnotexist', coinsTendered);
+                expect(doesProductNameExist).toEqual(false);
+            });
+        });
+        describe('when product name exists', () => {
+
+            describe('when product has insufficient quantity', () => {
+                it('should return false', () => {
+                    const coinsTendered = [];
+                    testVendingMachine.inventory[0].quantity = 0;
+                    const actualResult = testVendingMachine.dispenseProduct('mars', coinsTendered);
+                    expect(actualResult).toEqual(false);
+                });
+            });
+            describe('when product has sufficient quanitity', () => {
+                describe('when product value is greater than coinsTendered', () => {
+                    it('should return false', () => {
+                        const coinsTendered = [{
+                            value: 70,
+                        }];
+                        const actualResult = testVendingMachine.dispenseProduct('mars', coinsTendered);
+                        expect(actualResult).toEqual(false);
+                    });
+                });
+                describe('when product value is equal to coinsTendered', () => {
+                    it('should return product name', () => {
+                        const coinsTendered = [{
+                            value: 80,
+                        }];
+                        const actualResult = testVendingMachine.dispenseProduct('mars', coinsTendered);
+                        expect(actualResult).toEqual('mars you paid in exact change');
+                    });
+                });
+            });
+
+
         });
     });
 
