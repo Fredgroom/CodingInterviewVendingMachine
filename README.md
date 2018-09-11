@@ -1,7 +1,23 @@
-A project to complete: 
+# Vending Machine Code Interview
 
-The task for your coding interview is to implement a vending machine in JavaScript.
+This Repository implements a vending machine in Javascript.
 
-The vending machine itself should be a Javascript class. You do not need to write an interface for using the vending machine, just tests to prove that it works.
+To run the project:
+
+in the home directory install the modules with:
+
+```
+npm install
+```
+
+to run the tests:
+
+```
+npm test
+```
+
+screenshot: 
+
 
 ![alt text](./running-tests.png)
+
